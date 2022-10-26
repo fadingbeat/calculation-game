@@ -4,6 +4,8 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 ## Run the app
 
+- run npm install to get all dependencies installed on your machine
+
 > Follow the simple steps for running the app:
 
 - Start the server with **npm start**
