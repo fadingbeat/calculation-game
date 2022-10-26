@@ -1,0 +1,39 @@
+<form [formGroup]="calculationForm" class="mat-flex-form">
+  <div class="form-group">
+    <div class="mat-headline">{{ title }}</div>
+    <mat-form-field appearance="fill" hintLabel="Random digit one">
+      {{ digitOne }}
+      <input matInput formControlName="digitOne" />
+    </mat-form-field>
+
+    +
+    <mat-form-field appearance="fill" hintLabel="Random digit two">
+      {{ digitTwo }}
+      <input matInput formControlName="digitTwo" />
+    </mat-form-field>
+    =
+    <mat-form-field appearance="fill" hintLabel="Only 0-9 characters">
+      <mat-label>Enter the result</mat-label>
+      <input
+        matInput
+        formControlName="result"
+        placeholder="Ex. 5"
+        (keyup)="onKeyPress($event)"
+        [(ngModel)]="emptyValue"
+      />
+    </mat-form-field>
+    <div *ngIf="result">
+      <mat-card>
+        <mat-card-title>List of calculations</mat-card-title>
+        <mat-card-subtitle
+          >Calculation results with respective comment</mat-card-subtitle
+        >
+        <mat-card-content
+          ><div *ngFor="let calc of calculationArr">
+            {{ calc }}
+          </div></mat-card-content
+        >
+      </mat-card>
+    </div>
+  </div>
+</form>
